@@ -2,6 +2,11 @@
 
 This is a script that **automatically** executes *the TASK* after installing **Linux for the first time**.
 
+## Quick Start
+```bash
+$ sh startup.sh
+```
+
 ## The TASK
 1. Update ubuntu packages
 1. Upgrade ubuntu packages
