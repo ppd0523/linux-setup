@@ -1,8 +1,8 @@
 # Linux and Shell setup script
 
-This is a script that **automatically** executes *the task* after installing **Linux for the first time**.
+This is a script that **automatically** executes *the TASK* after installing **Linux for the first time**.
 
-## The task
+## The TASK
 1. Update ubuntu packages
 1. Upgrade ubuntu packages
 1. Install required packages
@@ -18,23 +18,22 @@ This is a script that **automatically** executes *the task* after installing **L
     * python3-pip
     * openssh-server
 1. Change the `python3` command to `python`
-```bash
-$ /usr/bin/python -> /usr/bin/python3
-```
+    ```bash
+    $ /usr/bin/python -> /usr/bin/python3
+    ```
 1. Git global configure
 1. Download and Install utils
     * autojump
     * fzf
     * oh-my-zsh
     * zplug
+1. Copy `.zshrc` to $HOME
 1. Change shell to zsh
-1. Alias korean
-    * l, ll, ls
-    * cd
 
+---
 ### Trouble shooting in Ubuntu20.04
 
-2021-05-25: 
+2021-05-25:  
  Crash when installing *bat* and *ripgrep* on **Ubuntu20.04**. The packages can be forcibly installed.
 
 ```bash
