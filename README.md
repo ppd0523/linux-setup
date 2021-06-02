@@ -4,7 +4,7 @@ This is a script that **automatically** executes *the TASK* after installing **L
 
 ## Quick Start
 ```bash
-$ sh startup.sh
+$ sudo sh startup.sh
 ```
 
 ## The TASK
@@ -16,6 +16,7 @@ $ sh startup.sh
     * git
     * vim
     * tree
+    * tmux
     * *ripgrep*
     * *bat*
     * python3
@@ -28,11 +29,11 @@ $ sh startup.sh
     ```
 1. Git global configure
 1. Download and Install utils
-    * autojump
     * fzf
     * oh-my-zsh
     * zplug
 1. Copy `.zshrc` to $HOME
+1. Copy `.tmux.conf` to $HOME
 1. Change shell to zsh
 
 ---

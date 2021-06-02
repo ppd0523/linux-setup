@@ -1,3 +1,22 @@
+# -------------- Alias --------------
+
+# ls alternative: K
+alias kk='k -a'
+alias ka='k -A'
+alias kd='k -d'
+
+# tmux
+alias tl='tmux ls'
+
+alias ㅉ="ll"
+alias ㅈㅈ="ll"
+alias ㅈ="l"
+alias ㅈㄴ="ls"
+alias ㅔㅣ="cd"
+
+# ------------- Alias end -----------
+
+
 # if you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -8,7 +27,7 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="random"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -68,7 +87,7 @@ ZSH_THEME="random"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump fzf)
+plugins=(git fzf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -79,13 +98,30 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+# -------------------------------- ZPLUG ---------------------------------
 # ZPLUG
 source ~/.zplug/init.zsh 
 
-zplug "zsh-users/zsh-autosuggestions" 
-zplug "zsh-users/zsh-completions" 
-zplug "zsh-users/zsh-history-substring-search" 
-zplug "zsh-users/zsh-syntax-highlighting" 
+# https://github.com/webyneter/docker-aliases
+zplug "webyneter/docker-aliases", use:docker-aliases.plugin.zsh
+
+# https://github.com/wting/autojump
+zplug "plugins/autojump",                        from:oh-my-zsh, frozen:1
+
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found
+zplug "plugins/command-not-found",               from:oh-my-zsh
+
+# https://github.com/supercrabtree/k
+zplug "supercrabtree/k"
+
+# https://github.com/zsh-users
+zplug "zsh-users/zsh-completions",               defer:0
+zplug "zsh-users/zsh-autosuggestions",           defer:1, on:"zsh-users/zsh-completions"
+zplug "zsh-users/zsh-syntax-highlighting",       defer:1, on:"zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-history-substring-search",  defer:2, on:"zsh-users/zsh-syntax-highlighting"
+
 
 zplug check || zplug install 
 zplug load 
+
+# ------------------------------ ZPLUG END -------------------------------
