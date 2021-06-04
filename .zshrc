@@ -120,6 +120,8 @@ zplug "zsh-users/zsh-autosuggestions",           defer:1, on:"zsh-users/zsh-comp
 zplug "zsh-users/zsh-syntax-highlighting",       defer:1, on:"zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-history-substring-search",  defer:2, on:"zsh-users/zsh-syntax-highlighting"
 
+zplug "djui/alias-tips"
+
 
 zplug check || zplug install 
 zplug load 
