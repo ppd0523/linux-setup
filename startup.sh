@@ -28,6 +28,14 @@ echo -e "\e[33m Package installed!\e[0m"
 update-alternatives --install /usr/bin/python python /usr/bin/python3 20 && \
 echo -e "\e[33m Set update-alternatives!\e[0m"
 
+# font download
+sudo mkdir /usr/share/fonts/truetype/MesloLGS_NF && \
+sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf && \
+sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf && \
+sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf && \
+sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Bold%20Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf && \
+echo -e "\e[33m Downloads MesloLGS Nerd Font!\e[0m"
+
 
 # git config
 git config --global user.email "emma415g@gmail.com" && \
