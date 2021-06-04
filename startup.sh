@@ -58,7 +58,7 @@ echo -e "\e[33m oh-my-zsh installed, zshrc copyed!\e[0m"
 
 # oh-my-zsh
 cd ~ && \
-git clone --depth 1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k && \
+git clone --depth 1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k && \
 echo -e "\e[33m powerlevel10k installed!\e[0m"
 
 # tmux
