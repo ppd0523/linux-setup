@@ -18,10 +18,12 @@ bat \
 #build-essential \
 python3 \
 python3-venv \
-python3-doc \
 python3-pip \
 openssh-server && \
 echo -e "\e[33m Package installed!\e[0m"
+
+wget https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_amd64.deb
+wget https://github.com/BurntSushi/ripgrep/releases/download/13.0.0/ripgrep_13.0.0_amd64.deb
 
 # python alias config
 # Default python is python3
@@ -29,11 +31,11 @@ update-alternatives --install /usr/bin/python python /usr/bin/python3 20 && \
 echo -e "\e[33m Set update-alternatives!\e[0m"
 
 # font download
-sudo mkdir /usr/share/fonts/truetype/MesloLGS_NF && \
-sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf && \
-sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf && \
-sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf && \
-sudo wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Bold%20Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf && \
+ mkdir /usr/share/fonts/truetype/MesloLGS_NF && \
+wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Regular.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf && \
+wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Bold.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf && \
+wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf && \
+wget -O /usr/share/fonts/truetype/MesloLGS_NF/MesloLGS%20NF%20Bold%20Italic.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf && \
 echo -e "\e[33m Downloads MesloLGS Nerd Font!\e[0m"
 
 
@@ -50,24 +52,29 @@ cd ~/.fzf && \
 (echo "y";echo "y";echo "n")|./install && \
 echo -e "\e[33m fzf installed!\e[0m"
 
+# autojump
+git clone --depth 1 https://github.com/wting/autojump.git ~ && \
+cd ~/autojump && \
+./install.py
+
 # oh-my-zsh
 cd ~ && \
 git clone --depth 1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && \
-cp ~/linux-setup/.zshrc ~ && \
+cp .zshrc ~ && \
 echo -e "\e[33m oh-my-zsh installed, zshrc copyed!\e[0m"
 
-# oh-my-zsh
+# powerlevel10k theme
 cd ~ && \
 git clone --depth 1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k && \
 echo -e "\e[33m powerlevel10k installed!\e[0m"
 
 # tmux
-cp ~/linux-setup/.tmux.conf ~ && \
+cp $OLDPWD/.tmux.conf $HOME
 echo -e "\e[33m .tmux.conf copyed!\e[0m"
 
 # zplug
-cd ~ && \
-git clone --depth 1 https://github.com/zplug/zplug ~/.zplug && \
+git clone --depth 1 https://github.com/zplug/zplug ~/.zplug
+cp $OLDPWD/.zshrc $HOME
 echo -e "\e[33m zplug installed!\e[0m"
 
 # Change default shell to zsh
